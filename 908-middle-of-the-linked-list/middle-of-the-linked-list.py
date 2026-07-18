@@ -5,15 +5,16 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        curr = head
+        temp = head
         count = 0
-        while curr:
-            curr = curr.next
-            count += 1
-        middle_element = count // 2
+        while temp is not None:
+            temp = temp.next
+            count +=1
+        middle = count//2
+        # suppose middle = 3
+        temp = head
+        for i in range(middle):
+            temp = temp.next
+        return temp
+
         
-        current = head          # Fix 1: fresh pointer starting from head
-        for _ in range(middle_element):   # Fix 2: loop to walk forward, not [] indexing
-            current = current.next
-        
-        return current           # Fix 3: return the node itself
