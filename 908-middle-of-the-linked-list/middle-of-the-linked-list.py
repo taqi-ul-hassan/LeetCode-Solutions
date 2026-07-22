@@ -10,10 +10,10 @@ class Solution:
         while curr is not None:
             curr = curr.next
             count+=1
+        middle = count//2
         curr = head
-        middle_value = count//2
-        for i in range(middle_value):
+        for i in range(middle):
             curr = curr.next
         return curr
-
+        
         
