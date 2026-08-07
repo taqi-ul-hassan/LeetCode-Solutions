@@ -11,4 +11,3 @@ class Solution:
             total = total * 2 + curr.val
             curr = curr.next
         return total
-        
