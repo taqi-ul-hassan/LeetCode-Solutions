@@ -7,20 +7,17 @@ class Solution:
     def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
         dumy1 = ListNode(0)
         dumy2 = ListNode(0)
-        prev1 = dumy1
-        prev2 = dumy2
-        temp = head  
+        less1 = dumy1
+        great2 = dumy2
+        temp = head
         while temp is not None:
             if temp.val < x:
-                prev1.next = temp
-                prev1 = prev1.next
+                less1.next = temp
+                less1 = less1.next
             elif temp.val >= x:
-                prev2.next = temp
-                prev2 = prev2.next
+                great2.next = temp
+                great2 = great2.next
             temp = temp.next
-        prev1.next = dumy2.next
-        prev2.next = None
+        less1.next = dumy2.next
+        great2.next = None
         return dumy1.next
-
-
-    
