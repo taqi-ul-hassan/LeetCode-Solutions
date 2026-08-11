@@ -10,6 +10,6 @@ class Solution:
         while fast is not None and fast.next is not None:
             slow = slow.next
             fast = fast.next.next
-            if fast == slow:
+            if slow == fast:
                 return True
-        return False 
+        return False
