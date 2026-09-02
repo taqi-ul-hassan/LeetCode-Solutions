@@ -1,10 +1,13 @@
-class Solution(object):
-    def isPalindrome(self, x):
-        to_str = str(x)
-        reversed_x = to_str[::-1]
-        if to_str == reversed_x:
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        new_x = ""
+        number = x
+        while x > 0:
+            last_digit = x%10
+            new_x+=(str(last_digit))
+            x = x//10
+        if number == 0:
             return True
-        else:
-            return False
-        return x
-        
+        if new_x == str(number):
+            return True
+        return False
