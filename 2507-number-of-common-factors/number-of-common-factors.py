@@ -1,8 +1,8 @@
 class Solution:
     def commonFactors(self, a: int, b: int) -> int:
         g = gcd(a,b)
-        result = []
+        count = 0
         for i in range(1,g+1):
-            if g%i == 0:
-                result.append(g)
-        return len(result)
+            if g % i == 0:
+                count+=1
+        return count
