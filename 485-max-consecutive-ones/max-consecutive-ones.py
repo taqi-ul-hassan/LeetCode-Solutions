@@ -6,6 +6,6 @@ class Solution:
             if nums[i] == 1:
                 count+=1
             else:
-                max_count = max(max_count,count)
+                max_count = max(count,max_count)
                 count = 0
-        return max(max_count,count)
+        return max(count,max_count)
